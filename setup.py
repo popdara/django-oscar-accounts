@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
+import codecs
+
 install_requires = [
     'django-oscar>=1.5,<1.6',
     'python-dateutil>=2.6,<3.0',
@@ -23,7 +25,7 @@ setup(
     author="David Winterbottom",
     author_email="david.winterbottom@tangentlabs.co.uk",
     description="Managed accounts for django-oscar",
-    long_description=open('README.rst').read(),
+    long_description=codecs.open('README.rst', 'r', 'utf-8').read(),,
     license='BSD',
     package_dir={'': 'src'},
     packages=find_packages('src'),
