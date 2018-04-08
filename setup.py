@@ -25,7 +25,7 @@ setup(
     author="David Winterbottom",
     author_email="david.winterbottom@tangentlabs.co.uk",
     description="Managed accounts for django-oscar",
-    long_description=codecs.open('README.rst', 'r', 'utf-8').read(),,
+    long_description=codecs.open('README.rst', 'r', 'utf-8').read(),
     license='BSD',
     package_dir={'': 'src'},
     packages=find_packages('src'),
