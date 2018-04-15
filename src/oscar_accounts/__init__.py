@@ -6,7 +6,7 @@ import os
 # extended by a template with the same identifier.
 TEMPLATE_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    'templates/accounts')
+    'templates/')
 
 
 default_app_config = 'oscar_accounts.config.OscarAccountsConfig'
