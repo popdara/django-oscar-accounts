@@ -6,6 +6,7 @@ import codecs
 install_requires = [
     'django-oscar>=1.5,<1.6',
     'python-dateutil>=2.6,<3.0',
+    'django-ipware==2.1',
 ]
 
 tests_require = [
