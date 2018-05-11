@@ -5,7 +5,7 @@ IPAddressRecord = get_model('oscar_accounts', 'IPAddressRecord')
 
 
 def record_failed_request(request):
-    client_ip = get_client_ip(request)
+    client_ip, _ = get_client_ip(request)
     client_ip = client_ip if client_ip is not None else '127.0.0.1'
     record, __ = IPAddressRecord.objects.get_or_create(ip_address=client_ip)
     record.increment_failures()
@@ -13,7 +13,7 @@ def record_failed_request(request):
 
 def record_successful_request(request):
     try:
-        client_ip = get_client_ip(request)
+        client_ip, _ = get_client_ip(request)
         client_ip = client_ip if client_ip is not None else '127.0.0.1'
         record, __ = IPAddressRecord.objects.get_or_create(ip_address=client_ip)
     except IPAddressRecord.DoesNotExist:
@@ -23,7 +23,7 @@ def record_successful_request(request):
 
 def record_blocked_request(request):
     try:
-        client_ip = get_client_ip(request)
+        client_ip, _ = get_client_ip(request)
         client_ip = client_ip if client_ip is not None else '127.0.0.1'
         record, __ = IPAddressRecord.objects.get_or_create(ip_address=client_ip)
     except IPAddressRecord.DoesNotExist:
@@ -33,7 +33,7 @@ def record_blocked_request(request):
 
 def is_blocked(request):
     try:
-        client_ip = get_client_ip(request)
+        client_ip, _ = get_client_ip(request)
         # well, that's embarassing
         if client_ip is None:
             return True
